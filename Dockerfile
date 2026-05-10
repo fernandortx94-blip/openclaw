@@ -1,5 +1,6 @@
 FROM node:24-alpine
 WORKDIR /app
 RUN npm install -g openclaw
+RUN openclaw setup
 EXPOSE 18789
-CMD ["openclaw", "gateway"]
+CMD ["openclaw", "gateway", "--allow-unconfigured"]
